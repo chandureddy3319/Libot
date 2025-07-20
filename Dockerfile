@@ -10,8 +10,8 @@ COPY . /var/www/html/
 # Enable Apache mod_rewrite (optional, for pretty URLs)
 RUN a2enmod rewrite
 
-# Set permissions for uploads directory (optional, for file uploads)
-RUN chown -R www-data:www-data /var/www/html/uploads
+# Ensure uploads directory exists and set permissions
+RUN mkdir -p /var/www/html/uploads && chown -R www-data:www-data /var/www/html/uploads
 
 # Expose port 80
 EXPOSE 80 
