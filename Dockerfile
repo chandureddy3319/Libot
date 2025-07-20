@@ -5,7 +5,7 @@ FROM php:8.2-apache
 RUN docker-php-ext-install mysqli
 
 # Copy project files to the Apache server root
-COPY . /var/www/html/
+COPY library/ /var/www/html/
 
 # Enable Apache mod_rewrite (optional, for pretty URLs)
 RUN a2enmod rewrite
